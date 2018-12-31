@@ -29,7 +29,7 @@ pipeline {
                 deleteDir()
                 git branch: "${GitProjBranch}",
                     credentialsId: "${GitCred}",
-                    url: "${GitProjUrl}
+                    url: "${GitProjUrl}"
 			}
 		}
 		stage('Sonarqube') {

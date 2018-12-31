@@ -15,6 +15,13 @@ pipeline {
         disableConcurrentBuilds()
         timeout(time: 60, unit: 'MINUTES')
     }
+	
+	   parameters {
+        string(name: 'GitCred', description: 'Jenkins-stored Git credential with which to execute git commands')
+        string(name: 'GitProjUrl', description: 'SSH URL from which to download the Jenkins git project')
+        string(name: 'GitProjBranch', description: 'Project-branch to use from the Jenkins git project')
+    }
+
 
     stages {
         stage ('Prepare Instance Environment') {
